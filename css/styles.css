@@ -14,6 +14,10 @@ body{
     text-transform: uppercase;
 }
 
+.navbar-toggler-icon{
+    color: #BB49DD;
+}
+
 #title{
     line-height: 50px;
     letter-spacing: 4px;
@@ -38,4 +42,25 @@ body{
 .carousel-caption{
     background: rgba(54, 69, 79, 0.3);
     padding:20px;
+}
+
+#recipes_products{
+    width: 85%;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+#recipes{
+    background-color: #79D45E;
+    color: #F6E683;
+}
+
+#products{
+    background-color: #FFAF68;
+    color: #31BFF3;
+}
+
+#home-search{
+    background-color: #F6E683;
+    color: #79D45E;
 }
