@@ -9,6 +9,13 @@ body{
     
 }
 
+footer{
+    background-color: #B2DFF4;
+    color: #BB49DD;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .navbar-brand, .nav-link{
     color: #BB49DD;
     text-transform: uppercase;
@@ -48,19 +55,49 @@ body{
     width: 85%;
     margin-left: 100px;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #recipes{
     background-color: #79D45E;
     color: #F6E683;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 #products{
     background-color: #FFAF68;
     color: #31BFF3;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 #home-search{
     background-color: #F6E683;
     color: #79D45E;
+}
+
+#addRecipeForm{
+    font-family: 'Archivo Narrow', sans-serif;
+    width:60%;
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #F4889A;
+    color: #BB49DD;
+    border-radius: 10px;
+}
+
+#addRecipeForm input, #addRecipeForm textarea{
+    width: 75%;
+    margin-left: 100px;
+    padding: 20px;
+}
+
+#addRecipeForm label{
+    font-size: 25px;
+}
+#addRecipeForm button{
+    margin-bottom: 20px;
 }

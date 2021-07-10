@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
     <title>Caldwell Culinary</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
@@ -91,6 +90,40 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+
+      <div id="addRecipeForm">
+          <h1>Add your favourite recipe</h1>
+          <p><em>Whether it be a family recipe or your own creation</em></p>
+          <form>
+            <div class="form-group">
+              <label for="recipeName1">Recipe Name</label>
+              <input type="text" class="form-control" id="recipeName1" placeholder="Recipe Name">
+            </div>
+            <div class="form-group">
+              <label for="chefName1">Chef's name</label>
+              <input type="text" class="form-control" id="chefName1" placeholder="Chef's Name">
+            </div>
+            <div class="form-group">
+              <label for="ingredients1">Ingredients</label>
+              <textarea class="form-control" id="ingredients1" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="method1">Method</label>
+              <textarea class="form-control" id="method1" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Add a picture</label>
+                <input type="file" class="form-control-file" id="picture1">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <span>Caldwell Culinary 2021 &copy;</span>
+        </div>
+      </footer>
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
