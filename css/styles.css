@@ -51,7 +51,7 @@ footer{
     padding:20px;
 }
 
-#recipes_products{
+#recipes_products, #added_recipe{
     width: 85%;
     margin-left: 100px;
     margin-top: 40px;
@@ -79,20 +79,25 @@ footer{
 
 #addRecipeForm{
     font-family: 'Archivo Narrow', sans-serif;
-    width:60%;
     text-align: center;
-    margin-left: 300px;
-    margin-top: 40px;
-    margin-bottom: 40px;
     background-color: #F4889A;
     color: #BB49DD;
     border-radius: 10px;
+    padding: 15px;
+}
+
+#displayAdded{
+    font-family: 'Archivo Narrow', sans-serif;
+    text-align: center;
+    background-color: #F4889A;
+    color: #BB49DD;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 #addRecipeForm input, #addRecipeForm textarea{
     width: 75%;
-    margin-left: 100px;
-    padding: 20px;
+    margin-left: 70px;
 }
 
 #addRecipeForm label{
