@@ -8,7 +8,7 @@
     <title>Caldwell Culinary</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+    </head>
 <body>
     <nav class="navbar navbar-expand-md mb-4">
         <a class="navbar-brand" id="title" href="#">Caldwell Culinary</a>
@@ -90,6 +90,39 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <div class="row" id="added_recipe">
+        <div class="col-md-5" id="addRecipeForm">
+            <h1>Add your favourite recipe</h1>
+            <p><em>Whether it be a family recipe or your own creation</em></p>
+            <form>
+              <div class="form-group">
+                <label for="recipeName1">Recipe Name</label>
+                <input type="text" class="form-control" id="recipeName1" placeholder="Recipe Name">
+              </div>
+              <div class="form-group">
+                <label for="chefName1">Chef's name</label>
+                <input type="text" class="form-control" id="chefName1" placeholder="Chef's Name">
+              </div>
+              <div class="form-group">
+                <label for="ingredients1">Ingredients</label>
+                <textarea class="form-control" id="ingredients1" rows="10"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="method1">Method</label>
+                <textarea class="form-control" id="method1" rows="10"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="exampleFormControlFile1">Add a picture</label>
+                  <input type="file" class="form-control-file" id="picture1">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5" id="displayAdded">
+            <h1>Let's see your creation</h1>
+        </div>
+        </div>
 
       <footer class="footer">
         <div class="container">
@@ -97,9 +130,9 @@
         </div>
       </footer>
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-      <script src="../../assets/js/vendor/popper.min.js"></script>
-      <script src="../../dist/js/bootstrap.min.js"></script>    
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
