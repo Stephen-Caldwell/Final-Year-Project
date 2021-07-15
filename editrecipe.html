@@ -56,7 +56,7 @@
               <div class="carousel-caption text-left" id="carousel-caption">
                 <h1>Add your own recipes</h1>
                 <p>Add your own world famous recipes for everyone to enjoy and love just like you and your family</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Add</a></p>
+                <p><a class="btn btn-lg btn-primary" href="addrecipe.html" role="button">Add</a></p>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
               <div class="carousel-caption text-right" id="carousel-caption">
                 <h1>Edit</h1>
                 <p>Oops you forgot something, find your recipe and add it in, or maybe you tried something new at home and you want to share it.</p>
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Edit</a></p>
+                <p><a class="btn btn-lg btn-success" href="editrecipe.html" role="button">Edit</a></p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
               <div class="carousel-caption text-right" id="carousel-caption">
                 <h1>Delete</h1>
                 <p>Everyone loves your recipes, why delete them?</p>
-                <p><a class="btn btn-lg btn-danger" href="#" role="button">Delete</a></p>
+                <p><a class="btn btn-lg btn-danger" href="deleterecipe.html" role="button">Delete</a></p>
               </div>
             </div>
           </div>
@@ -90,10 +90,15 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div class="row" id="added_recipe">
-        <div class="col-md-5" id="addRecipeForm">
-            <h1>Add your favourite recipe</h1>
-            <p><em>Whether it be a family recipe or your own creation</em></p>
+      <div class="row" id="edit_recipe">
+          
+        <div class="col-md-5" id="editRecipeForm">
+            <h1>Edit your recipe</h1>
+            <p><em>Did you discover something new, share it</em></p>
+            <form class="form-inline mt-2 mt-md-0" id="edit-search">
+                <input class="form-control mr-sm-2" type="text" placeholder="Find your recipe" aria-label="Search"> 
+                <button class="btn my-2 my-sm-0 btn-primary" type="submit" id="edit-search-button">Search</button>
+              </form>
             <form>
               <div class="form-group">
                 <label for="recipeName1">Recipe Name</label>
@@ -112,15 +117,15 @@
                 <textarea class="form-control" id="method1" rows="10"></textarea>
               </div>
               <div class="form-group">
-                  <label for="exampleFormControlFile1">Add a picture</label>
+                  <label for="exampleFormControlFile1">Change picture</label>
                   <input type="file" class="form-control-file" id="picture1">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
         <div class="col-md-2"></div>
-        <div class="col-md-5" id="displayAdded">
-            <h1>Let's see your creation</h1>
+        <div class="col-md-5" id="displayEdit">
+            <h1>Let's see your new and improved creation</h1>
         </div>
         </div>
 
