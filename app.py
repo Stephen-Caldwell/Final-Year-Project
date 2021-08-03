@@ -14,8 +14,8 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 @app.route("/")
-@app.route("/index")
-def get_recipes():
+@app.route("/home")
+def home():
     return render_template("index.html")
 
 if __name__ == "__main__":
