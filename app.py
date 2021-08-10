@@ -25,5 +25,3 @@ if __name__ == "__main__":
 @app.route("/addrecipe", methods=["GET", "POST"])
 def addrecipe():
     return render_template("addrecipe.html")
-
-
