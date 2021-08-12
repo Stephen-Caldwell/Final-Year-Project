@@ -42,4 +42,4 @@ The font used on the site is Archivo Narrow with sans-serif as a backup. The fon
 Imagery used was just simple images taken from stock photo website (https://unsplash.com/). The purpose is for mainly aesthetic for the carousel to illustrate the options that the users have on the site.
 
 #### Wireframes
-Wireframes were created using Balsamiq,
+Wireframes were created using Balsamiq, https://github.com/Stephen-Caldwell/Milestone-Project-3/blob/main/static/assets/wireframe
