@@ -104,6 +104,7 @@
                     <p>{{ recipe.ingredients }}</p>
                     <h6>Method</h6>
                     <p>{{ recipe.method }}</p>
+                    <p><a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a></p>
                 
             </li>
             {% endfor %}
