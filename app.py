@@ -43,7 +43,7 @@ def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('home'))
 
-@app.route('/edit_recipe/<recipe_id>')
+@app.route('/editrecipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('editrecipe.html',
