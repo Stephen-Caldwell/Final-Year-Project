@@ -95,7 +95,7 @@
       <div class="col-md-5" id="addRecipeForm">
           <h1>Add your favourite recipe</h1>
           <p><em>Whether it be a family recipe or your own creation</em></p>
-          <form method="POST" action="{{ url_for('addrecipe') }}">
+          <form method="POST" action="{{ url_for('insert_recipe') }}">
             <div class="form-group">
               <label for="recipeName1">Recipe Name</label>
               <input type="text" class="form-control" id="recipeName1" placeholder="Recipe Name">
@@ -112,10 +112,6 @@
               <label for="method1">Method</label>
               <textarea class="form-control" id="method1" rows="10"></textarea>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Add a picture</label>
-                <input type="file" class="form-control-file" id="picture1">
-              </div>
               <button type="submit" class="btn btn-primary" name="action">Submit</button>
           </form>
       </div>

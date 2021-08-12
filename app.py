@@ -12,6 +12,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key  = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+recipes = mongo.db.Recipes
 
 @app.route("/")
 def home():
@@ -22,6 +23,24 @@ if __name__ == "__main__":
             port=int(os.environ.get("PORT")),
             debug=True)
 
-@app.route("/addrecipe", methods=["GET", "POST"])
+@app.route("/addrecipe")
 def addrecipe():
     return render_template("addrecipe.html")
+
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes.insert_one({
+        'recipe_name': request.form.get('recipeName1'),
+        'chef name': request.form.get('chefName1'),
+        'ingredients1': request.form.get('ingredients1'),
+        'method1': request.form.get('method1')
+    })
+
+
+# @app.route("/editrecipe", methods=["GET", "POST"])
+# def addrecipe():
+#     return render_template("addrecipe.html")
+
+# @app.route("/addrecipe", methods=["GET", "POST"])
+# def addrecipe():
+#     return render_template("addrecipe.html")

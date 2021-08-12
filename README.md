@@ -12,15 +12,15 @@ The website I developed is a recipe sharing site where users can upload their fa
         - [Imagery](#imagery)
         - [Wireframes](#wireframes)
 
-[Features](#features)
+2. [Features](#features)
 
-[Technologies Used](#technologies-used)
+3. [Technologies Used](#technologies-used)
 
-[Testing](#testing)
+4. [Difficulties](#difficulties)
 
-[Deployment](#deployment)
+5. [Deployment](#deployment)
 
-[Credits](#credits)
+6. [Credits](#credits)
 
 ## User Experience (UX)
 
@@ -68,3 +68,5 @@ The features of the website are pretty simple:
     - Used to connect python to the front end with the HTML templates
 - Balsamiq
     - Used to create the wireframes
+
+
