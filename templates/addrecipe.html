@@ -98,19 +98,19 @@
           <form method="POST" action="{{ url_for('insert_recipe') }}">
             <div class="form-group">
               <label for="recipeName1">Recipe Name</label>
-              <input type="text" class="form-control" id="recipeName1" placeholder="Recipe Name">
+              <input type="text" class="form-control" id="recipeName1" name="recipeName1" placeholder="Recipe Name">
             </div>
             <div class="form-group">
               <label for="chefName1">Chef's name</label>
-              <input type="text" class="form-control" id="chefName1" placeholder="Chef's Name">
+              <input type="text" class="form-control" id="chefName1" name="chefName1" placeholder="Chef's Name">
             </div>
             <div class="form-group">
               <label for="ingredients1">Ingredients</label>
-              <textarea class="form-control" id="ingredients1" rows="10"></textarea>
+              <textarea class="form-control" id="ingredients1" name="ingredients1" rows="10"></textarea>
             </div>
             <div class="form-group">
               <label for="method1">Method</label>
-              <textarea class="form-control" id="method1" rows="10"></textarea>
+              <textarea class="form-control" id="method1" name="method1" rows="10"></textarea>
             </div>
               <button type="submit" class="btn btn-primary" name="action">Submit</button>
           </form>
