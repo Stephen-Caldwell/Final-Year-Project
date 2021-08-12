@@ -92,17 +92,24 @@
         </a>
       </div>
       <div class="row" id="recipes_products">
-        <div class="col-md-5" id="recipes">
-          <h1>Recipes</h1>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> 
-            <button class="btn my-2 my-sm-0" type="submit" id="home-search">Search</button>
-          </form>
+        <div class="col-md-10" id="recipes" name = "recipes">
+          <ul class="collapsible popout" data-collapsible="expandable">
+            {% for recipe in recipes %}
+            <li>
+               
+                    <h6>{{ recipe.recipe_name }}</h6>
+                    <h6>Chef Name</h6>
+                    <p>{{ recipe.chef_name }}</p>
+                    <h6>Ingredient</h6>
+                    <p>{{ recipe.ingredients }}</p>
+                    <h6>Method</h6>
+                    <p>{{ recipe.method }}</p>
+                
+            </li>
+            {% endfor %}
+        </ul>
         </div>
-        <div class="col-md-2"></div>
-        <div class="col-md-5" id ="products">
-          <h1>Products</h1>
-        </div>
+        
       </div>
 
       <footer class="footer">

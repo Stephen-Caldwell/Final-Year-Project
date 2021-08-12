@@ -16,7 +16,8 @@ recipes = mongo.db.Recipes
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    recipes = mongo.db.recipes.find()
+    return render_template("index.html", recipes = recipes)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
@@ -31,9 +32,9 @@ def addrecipe():
 def insert_recipe():
     recipes.insert_one({
         'recipe_name': request.form.get('recipeName1'),
-        'chef name': request.form.get('chefName1'),
-        'ingredients1': request.form.get('ingredients1'),
-        'method1': request.form.get('method1')
+        'chef_name': request.form.get('chefName1'),
+        'ingredients': request.form.get('ingredients1'),
+        'method': request.form.get('method1')
     })
     return render_template("index.html")
 
