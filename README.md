@@ -1,5 +1,5 @@
 <h1 align="center">Caldwell Culinary </h1>
-<h1 align="center"><img src="./static/assets/imgs/responsiveness.jpg"></h1>
+<h1 align="center"><img src="static/assets/imgs/responsiveness.jpg"></h1>
 
 ## About
 The website I developed is a recipe sharing site where users can upload their favourite recipes, make any changes, or take them off the site. They will also be able to see other recipes shared by other users.
