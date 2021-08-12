@@ -37,11 +37,11 @@ def insert_recipe():
         'method': request.form.get('method1')
     })
     return redirect(url_for("home"))
-    
+
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipes'))
+    return redirect(url_for('home'))
 
 
 
