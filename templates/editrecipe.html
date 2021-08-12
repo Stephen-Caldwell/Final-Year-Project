@@ -99,19 +99,19 @@
             <form action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method="POST">
               <div class="form-group">
                 <label for="recipeName1">Recipe Name</label>
-                <input type="text" class="form-control" id="recipeName" name="recipeName" placeholder="Recipe Name" value = "{{ recipe.recipe_name }}">
+                <input type="text" class="form-control" id="recipeName" name="recipeName" placeholder="Recipe Name" value = "{{ recipes.recipe_name }}">
               </div>
               <div class="form-group">
                 <label for="chefName1">Chef's name</label>
-                <input type="text" class="form-control" id="chefName" name="chefName" placeholder="Chef's Name" value = "{{ recipe.chefs_name }}">
+                <input type="text" class="form-control" id="chefName" name="chefName" placeholder="Chef's Name" value = "{{ recipes.chefs_name }}">
               </div>
               <div class="form-group">
                 <label for="ingredients1">Ingredients</label>
-                <textarea class="form-control" id="ingredients" name="ingredients" rows="10" value = "{{ recipe.ingredients }}"></textarea>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="10" value = "{{ recipes.ingredients }}"></textarea>
               </div>
               <div class="form-group">
                 <label for="method1">Method</label>
-                <textarea class="form-control" id="method" name="method" rows="10" value = "{{ recipe.method }}"></textarea>
+                <textarea class="form-control" id="method" name="method" rows="10" value = "{{ recipes.method }}"></textarea>
               </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
