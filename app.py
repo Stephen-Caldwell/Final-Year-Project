@@ -35,6 +35,7 @@ def insert_recipe():
         'ingredients1': request.form.get('ingredients1'),
         'method1': request.form.get('method1')
     })
+    return redirect(url_for('/'))
 
 
 # @app.route("/editrecipe", methods=["GET", "POST"])
