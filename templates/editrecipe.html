@@ -95,31 +95,24 @@
         <div class="col-md-5" id="editRecipeForm">
             <h1>Edit your recipe</h1>
             <p><em>Did you discover something new, share it</em></p>
-            <form class="form-inline mt-2 mt-md-0" id="edit-search">
-                <input class="form-control mr-sm-2" type="text" placeholder="Find your recipe" aria-label="Search"> 
-                <button class="btn my-2 my-sm-0 btn-primary" type="submit" id="edit-search-button">Search</button>
-              </form>
-            <form>
+           
+            <form action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method="POST">
               <div class="form-group">
                 <label for="recipeName1">Recipe Name</label>
-                <input type="text" class="form-control" id="recipeName1" placeholder="Recipe Name">
+                <input type="text" class="form-control" id="recipeName" name="recipeName" placeholder="Recipe Name" value = "{{ recipe.recipe_name }}">
               </div>
               <div class="form-group">
                 <label for="chefName1">Chef's name</label>
-                <input type="text" class="form-control" id="chefName1" placeholder="Chef's Name">
+                <input type="text" class="form-control" id="chefName" name="chefName" placeholder="Chef's Name" value = "{{ recipe.chefs_name }}">
               </div>
               <div class="form-group">
                 <label for="ingredients1">Ingredients</label>
-                <textarea class="form-control" id="ingredients1" rows="10"></textarea>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="10" value = "{{ recipe.ingredients }}"></textarea>
               </div>
               <div class="form-group">
                 <label for="method1">Method</label>
-                <textarea class="form-control" id="method1" rows="10"></textarea>
+                <textarea class="form-control" id="method" name="method" rows="10" value = "{{ recipe.method }}"></textarea>
               </div>
-              <div class="form-group">
-                  <label for="exampleFormControlFile1">Change picture</label>
-                  <input type="file" class="form-control-file" id="picture1">
-                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

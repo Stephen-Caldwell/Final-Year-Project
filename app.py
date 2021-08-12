@@ -43,8 +43,19 @@ def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('home'))
 
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('editrecipe.html',
+                           recipes=the_recipe)
 
-
-# @app.route("/addrecipe", methods=["GET", "POST"])
-# def addrecipe():
-#     return render_template("addrecipe.html")
+ @app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes.update({'_id': ObjectId(recipe_id)},
+                   {
+        'recipe_name': request.form.get('recipeName'),
+        'chef_name': request.form.get('chefName'),
+        'ingredients': request.form.get('ingredients'),
+        'method': request.form.get('method')
+    })
+    return redirect(url_for('home'))                          
