@@ -19,17 +19,11 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('addrecipe') }}">Add</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/editrecipe.html">Edit</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/deleterecipe.html">Delete</a>
-              </li>
           </ul>
         </div>
       </nav>
@@ -57,7 +51,6 @@
               <div class="carousel-caption text-left" id="carousel-caption">
                 <h1>Add your own recipes</h1>
                 <p>Add your own world famous recipes for everyone to enjoy and love just like you and your family</p>
-                <p><a class="btn btn-lg btn-primary" href="addrecipe.html" role="button">Add</a></p>
               </div>
             </div>
           </div>
@@ -67,7 +60,6 @@
               <div class="carousel-caption text-right" id="carousel-caption">
                 <h1>Edit</h1>
                 <p>Oops you forgot something, find your recipe and add it in, or maybe you tried something new at home and you want to share it.</p>
-                <p><a class="btn btn-lg btn-success" href="editrecipe.html" role="button">Edit</a></p>
               </div>
             </div>
           </div>
@@ -77,7 +69,6 @@
               <div class="carousel-caption text-right" id="carousel-caption">
                 <h1>Delete</h1>
                 <p>Everyone loves your recipes, why delete them?</p>
-                <p><a class="btn btn-lg btn-danger" href="deleterecipe.html" role="button">Delete</a></p>
               </div>
             </div>
           </div>
@@ -104,8 +95,8 @@
                     <p>{{ recipe.ingredients }}</p>
                     <h6>Method</h6>
                     <p>{{ recipe.method }}</p>
-                    <p><a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a></p>
-                    <p><a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a></p>
+                    <p><a class="btn btn-primary" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a></p>
+                    <p><a class="btn btn-danger" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a></p>
                 
             </li>
             {% endfor %}

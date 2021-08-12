@@ -52,8 +52,8 @@ footer{
 }
 
 #recipes_products, #added_recipe, #edit_recipe{
-    width: 85%;
-    margin-left: 100px;
+    width: 70%;
+    margin-left: 15%;
     margin-top: 40px;
     margin-bottom: 40px;
 }
