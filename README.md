@@ -107,3 +107,8 @@ In the future I would add search and filter functionalities to make the website 
 I have the site delpoyed through Heroku, https://caldwell-culinary.herokuapp.com/, However I am getting a build error and I am unsure as to why this is happening.
 
 I was successful in deploying locally using Flask. I have uploaded a video of the site working in it's current state. <img src="static/assets/imgs/screenRecord.gif">
+
+## Credits
+- All code was written by the author Stephen Caldwell
+- Imagery was taken https://unsplash.com/
+- Thank you for all of those who took time to help and give advise.
