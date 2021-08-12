@@ -1,4 +1,5 @@
 <h1 align="center">Caldwell Culinary </h1>
+<h1 align="center"><img src="./static/assets/imgs/responsiveness.jpg"></h1>
 
 ## About
 The website I developed is a recipe sharing site where users can upload their favourite recipes, make any changes, or take them off the site. They will also be able to see other recipes shared by other users.
@@ -16,7 +17,7 @@ The website I developed is a recipe sharing site where users can upload their fa
 
 3. [Technologies Used](#technologies-used)
 
-4. [Difficulties](#difficulties)
+4. [Testing & Difficulties](#testing&difficulties)
 
 5. [Deployment](#deployment)
 
@@ -70,3 +71,33 @@ The features of the website are pretty simple:
     - Used to create the wireframes
 
 
+## Testing & Difficulties
+### Functionality
+- NavBar
+    - When the logo 'Caldwell Culinary' located on the right hand side of the navigation bar is clicked, it brings the user to the Home Page. This has been tested on desktop, tablet, and mobile views and from all pages.
+    - All links in the navbar are working and have been tested.
+    - The navigation bar stays at the top of the page on all screen sizes.
+- Carousel
+    - Automatically cycles through images displaying some text in the corners of the images
+    - Working on all screen sizes
+- Display
+    - Display on home page reads the database and retrieves the information displaying it in the display box
+    - Working on all screen sizes
+- Edit Button
+    - Displays correctly under each recipe
+    - Directs user to Edit form page
+- Delete Button
+    - Displays correctly under each recipe
+    - Deletes the correct recipe when clicked
+- Add Page
+    - Form appears and behaves as expected 
+    - Submit button calls the correct function, reading the inputted data and send it to the database correctly 
+- Edit Page
+    - Form appears and behaves as expected
+    - Form is pre-populated with the correct information of the recipe selected
+    - Allows editting of the inputs
+    - Submit button takes the updated information and sends the new information correctly updating the database
+
+## Difficulties
+The main difficulties I faced were with the database and the functionality surrounding that. It took a long time and help to get it right, eventually getting it right changed how I wanted the website to originally look.
+In the future I would add search and filter functionalities to make the website more user friendly and intuitive.
