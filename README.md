@@ -43,3 +43,28 @@ Imagery used was just simple images taken from stock photo website (https://unsp
 
 #### Wireframes
 Wireframes were created using Balsamiq, https://github.com/Stephen-Caldwell/Milestone-Project-3/blob/main/static/assets/wireframe
+
+## Features
+The features of the website are pretty simple:
+- User's can view recipes - This will display recipes from the database
+- Add recipes - Through a form will allow user's to add thir own recipes
+- Edit recipes - Select from the list of recipes which one to edit
+- Delete recipes - Select from the list of recipes which one to delete
+
+## Technologies used
+- HTML
+    - Used to structure the website
+- CSS
+    - Styling of the website
+- Bootstrap
+    - Further styling and carousel
+- Javascript
+    - For Bootstrap functionality
+- MongoDB 
+    - Store and retrieve data submitted from forms
+- Python
+    - Language used for backend code
+- Flask
+    - Used to connect python to the front end with the HTML templates
+- Balsamiq
+    - Used to create the wireframes
