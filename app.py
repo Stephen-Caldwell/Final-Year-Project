@@ -49,7 +49,7 @@ def edit_recipe(recipe_id):
     return render_template('editrecipe.html',
                            recipes=the_recipe)
 
- @app.route('/update_recipe/<recipe_id>', methods=["POST"])
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     recipes.update({'_id': ObjectId(recipe_id)},
                    {
