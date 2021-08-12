@@ -16,7 +16,7 @@ recipes = mongo.db.Recipes
 
 @app.route("/")
 def home():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.Recipes.find()
     return render_template("index.html", recipes = recipes)
 
 if __name__ == "__main__":
