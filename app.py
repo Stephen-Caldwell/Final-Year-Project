@@ -24,8 +24,8 @@ if __name__ == "__main__":
             port=int(os.environ.get("PORT")),
             debug=True)
 
-@app.route("/addrecipe")
-def addrecipe():
+@app.route("/add_recipe")
+def add_recipe():
     return render_template("addrecipe.html")
 
 @app.route('/insert_recipe', methods=['POST'])
