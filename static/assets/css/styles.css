@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+body{
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.navbar{
+    background-color: #B2DFF4;
+    
+}
+
+footer{
+    background-color: #B2DFF4;
+    color: #BB49DD;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.navbar-brand, .nav-link{
+    color: #BB49DD;
+    text-transform: uppercase;
+}
+
+.navbar-toggler-icon{
+    color: #BB49DD;
+}
+
+#title{
+    line-height: 50px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 35px
+}
+
+.nav-item{
+    font-family: 'Archivo Narrow', sans-serif;
+    line-height: 50px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 20px
+}
+
+#myCarousel{
+    font-family: 'Archivo Narrow', sans-serif;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.carousel-caption{
+    background: rgba(54, 69, 79, 0.3);
+    padding:20px;
+}
+
+#recipes_products, #added_recipe, #edit_recipe{
+    width: 80%;
+    margin-left: 15%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#recipes{
+    background-color: #B2DFF4;
+    color: #BB49DD;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#products{
+    background-color: #FFAF68;
+    color: #31BFF3;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#home-search{
+    background-color: #F6E683;
+    color: #79D45E;
+}
+
+#addRecipeForm, #editRecipeForm{
+    font-family: 'Archivo Narrow', sans-serif;
+    text-align: center;
+    background-color: #F4889A;
+    color: #BB49DD;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#displayAdded, #displayEdit{
+    font-family: 'Archivo Narrow', sans-serif;
+    text-align: center;
+    background-color: #F4889A;
+    color: #BB49DD;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#addRecipeForm input, #addRecipeForm textarea, #editRecipeForm input, #editRecipeForm textarea{
+    width: 75%;
+    margin-left: 70px;
+}
+
+#addRecipeForm label, #editRecipeForm label{
+    font-size: 25px;
+}
+#addRecipeForm button, #editRecipeForm button{
+    margin-bottom: 20px;
+}
+
+#edit-search{
+    width: 50%;
+}
+
+#edit-search-button{
+    position: relative;
+    bottom: 38px;
+    left: 275px;
+}
+
+#deleteRecipe{
+    width: 80%;
+    font-family: 'Archivo Narrow', sans-serif;
+    text-align: center;
+    background-color: #F4889A;
+    color: #BB49DD;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+#delete-search{
+    position: relative;
+    display: block;
+    margin : 0 auto;
+}
+
+.tiktokfeed{
+    margin-top: 40px;
+}
+
+.WidgetTitle__Container-sc-7vkaab-0{
+    background-color: #B2DFF4;
+    color: #BB49DD;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
