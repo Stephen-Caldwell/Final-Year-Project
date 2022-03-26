@@ -28,7 +28,7 @@ if __name__ == "__main__":
 def addrecipe():
     return render_template("addrecipe.html")
 
-@app.route('/insert_recipe', methods=['POST'])
+@app.route('/index.html', methods=['POST'])
 def insert_recipe():
     recipes.insert_one({
         'recipe_name': request.form.get('recipeName1'),
