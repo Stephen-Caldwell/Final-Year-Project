@@ -32,7 +32,7 @@ def addrecipe():
 def insert_recipe():
     recipes.insert_one({
         'recipe_name': request.form.get('recipeName1'),
-        'chef_name': request.form.get('chefName1'),
+        'creator': request.form.get('chefName1'),
         'ingredients': request.form.get('ingredients1'),
         'method': request.form.get('method1')
     })
