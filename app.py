@@ -1,5 +1,8 @@
 import os
-from flask import (Flask, flash, render_template, redirect, request, url_for)
+import json
+from typing import Collection
+from unittest import result
+from flask import (Flask, flash, render_template, redirect, request, url_for, jsonify)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -58,4 +61,9 @@ def update_recipe(recipe_id):
         'ingredients': request.form.get('ingredients'),
         'method': request.form.get('method')
     })
-    return redirect(url_for('home'))                          
+    return redirect(url_for('home'))       
+
+@app.route('/search', methods=['GET'])
+def search():
+        results = mongo.db.Recipes.find({}, request.form.get('search'))
+        return render_template('index.html', results = results)
