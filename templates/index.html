@@ -89,7 +89,28 @@
         
       </div>
 
-      
+      <div class="row" id="recipes_products">
+        <div class="col-md-10" id="recipes" name = "recipes">
+          <h1 style="text-align: center;">Recipes</h1>
+          <ul class="collapsible popout" data-collapsible="expandable">
+            {% for recipe in recipes %}
+            <li>
+               
+                    <h6>{{ recipe.recipe_name }}</h6>
+                    <h6>Chef Name</h6>
+                    <p>{{ recipe.chef_name }}</p>
+                    <h6>Ingredient</h6>
+                    <p>{{ recipe.ingredients }}</p>
+                    <h6>Method</h6>
+                    <p>{{ recipe.method }}</p>
+                    <p><a class="btn btn-primary" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a> <a class="btn btn-danger" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a></p>
+                
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+        
+      </div>
 
       <script src="https://apps.elfsight.com/p/platform.js" defer></script>
       <div class="elfsight-app-6021ff50-9a01-479f-a6ca-bdd61a3f0dd2 tiktokfeed"></div>
