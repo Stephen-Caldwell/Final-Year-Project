@@ -137,3 +137,12 @@ def insert_user():
         'password': request.form.get('password')
     })
     return redirect(url_for("index"))
+
+    
+@app.route("/logout", methods=["POST", "GET"])
+def logout():
+    if "email" in session:
+        session.pop("email", None)
+        return render_template("login.html")
+    else:
+        return render_template('index.html')
