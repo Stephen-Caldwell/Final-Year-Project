@@ -48,7 +48,7 @@ def index():
             new_email = user_data['email']
    
             return render_template('index.html', email=new_email)
-    return render_template('register.html')
+    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
@@ -114,6 +114,7 @@ def login():
             
             if password == passwordcheck:
                 session["email"] = email_val
+                session['logged_in'] = True
                 return redirect(url_for('index'))
             else:
                 if "email" in session:
@@ -143,6 +144,7 @@ def insert_user():
 def logout():
     if "email" in session:
         session.pop("email", None)
+        session['logged_in'] = False
         return render_template("login.html")
     else:
         return render_template('index.html')
