@@ -96,31 +96,34 @@
         
       </div>
 
-      <div class="row" id="recipes_products">
-        <div class="col-md-10" id="recipes" name = "recipes">
-          <h1 style="text-align: center;">Recipes</h1>
-          <ul class="collapsible popout" data-collapsible="expandable">
-            {% for recipe in recipes %}
-            <li>
-               
-                    <h6>{{ recipe.recipe_name }}</h6>
-                    <h6>Chef Name</h6>
-                    <p>{{ recipe.chef_name }}</p>
-                    <h6>Ingredient</h6>
-                    <p>{{ recipe.ingredients }}</p>
-                    <h6>Method</h6>
-                    <p>{{ recipe.method }}</p>
-                    <p><a class="btn btn-primary" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a> <a class="btn btn-danger" href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Delete</a></p>
-                
-            </li>
-            {% endfor %}
-        </ul>
+      <div class="row" id="search_products">
+        <div class="col-md-12" id="search" name = "search">
+          <h1 style="text-align: center;">Search</h1>
+          <div>
+          <div class="col-md-4" style="float: left;">
+            <h4>Search Recipe name</h4>
+            <form>
+              <input class="form-control mr-sm-2 recipe-search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="col-md-4" style="float: right;">
+            <h4>Search by Ingredients</h4>
+            <form>
+              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-        
+        </div>
       </div>
 
       <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-      <div class="elfsight-app-6021ff50-9a01-479f-a6ca-bdd61a3f0dd2 tiktokfeed"></div>
+      <div class="elfsight-app-6021ff50-9a01-479f-a6ca-bdd61a3f0dd2"></div>
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

@@ -22,9 +22,10 @@ users = mongo.db.Users
 
 @app.route("/", methods=['post', 'get'])
 def index():
+    recipe = mongo.db.Recipes.find()
     message = ''
     if "email" in session:
-        return render_template('index.html')
+        return render_template('index.html', recipes=recipe)
     if request.method == "POST":
         user = request.form.get("name")
         email = request.form.get("email")
@@ -47,7 +48,7 @@ def index():
             user_data = users.find_one({"email": email})
             new_email = user_data['email']
    
-            return render_template('index.html', email=new_email)
+            return render_template('index.html', email=new_email, recipes=recipe)
     return render_template('login.html')
 
 if __name__ == "__main__":
@@ -67,7 +68,7 @@ def insert_recipe():
         'ingredients': request.form.get('ingredients1'),
         'method': request.form.get('method1')
     })
-    return redirect(url_for("home"))
+    return redirect(url_for("index"))
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
@@ -94,7 +95,7 @@ def update_recipe(recipe_id):
 @app.route('/search', methods=['GET'])
 def search():
         results = mongo.db.Recipes.find({}, request.form.get('search'))
-        return render_template('index.html', results = results)
+        return render_template('searchresults.html', results = results)
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
