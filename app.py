@@ -1,5 +1,6 @@
 import os
 import json
+from webbrowser import get
 import bcrypt
 from re import template
 from typing import Collection
@@ -22,10 +23,10 @@ users = mongo.db.Users
 
 @app.route("/", methods=['post', 'get'])
 def index():
-    recipe = mongo.db.Recipes.find()
+    
     message = ''
     if "email" in session:
-        return render_template('index.html', recipes=recipe)
+        return render_template('index.html')
     if request.method == "POST":
         user = request.form.get("name")
         email = request.form.get("email")
@@ -48,7 +49,7 @@ def index():
             user_data = users.find_one({"email": email})
             new_email = user_data['email']
    
-            return render_template('index.html', email=new_email, recipes=recipe)
+            return render_template('index.html', email=new_email)
     return render_template('login.html')
 
 if __name__ == "__main__":
@@ -63,10 +64,10 @@ def addrecipe():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes.insert_one({
-        'recipe_name': request.form.get('recipeName1'),
-        'creator': request.form.get('chefName1'),
-        'ingredients': request.form.get('ingredients1'),
-        'method': request.form.get('method1')
+        'recipe_name': request.form.get('recipeName1').upper(),
+        'creator': request.form.get('creator1').upper(),
+        'ingredients': request.form.get('ingredients1').upper(),
+        'method': request.form.get('method1').upper()
     })
     return redirect(url_for("index"))
 
@@ -85,23 +86,24 @@ def edit_recipe(recipe_id):
 def update_recipe(recipe_id):
     recipes.update({'_id': ObjectId(recipe_id)},
                    {
-        'recipe_name': request.form.get('recipeName'),
-        'chef_name': request.form.get('chefName'),
-        'ingredients': request.form.get('ingredients'),
-        'method': request.form.get('method')
+        'recipe_name': request.form.get('recipeName').upper(),
+        'chef_name': request.form.get('chefName').upper(),
+        'ingredients': request.form.get('ingredients').upper(),
+        'method': request.form.get('method').upper()
     })
     return redirect(url_for('home'))       
 
 @app.route('/search', methods=['GET'])
 def search():
-        results = mongo.db.Recipes.find({}, request.form.get('search'))
-        return render_template('searchresults.html', results = results)
+            results = mongo.db.Recipes.find({'recipe_name' : {'$regex' : request.values.get('recipe-search').upper()}})
+            print(results)
+            return render_template('searchresults.html', recipes = results)
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
     message = 'Please login to your account'
     if "email" in session:
-        return render_template('index.html')
+        return render_template('useraccount.html')
 
     if request.method == "POST":
         email = request.form.get("email")

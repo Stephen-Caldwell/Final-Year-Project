@@ -11,19 +11,18 @@
 </head>
 <body>
     <div class="row" id="search_results">
-        <div class="col-md-10" id="results" name = "results">
+        <div class="col-md-10" id="recipes" name = "recipes">
           <h1 style="text-align: center;">Recipes</h1>
           <ul class="collapsible popout" data-collapsible="expandable">
             {% for recipe in recipes %}
-            <li>
-               
-                    <h6>{{ recipe.recipe_name }}</h6>
-                    <h6>Chef Name</h6>
-                    <p>{{ recipe.chef_name }}</p>
-                    <h6>Ingredient</h6>
-                    <p>{{ recipe.ingredients }}</p>
-                    <h6>Method</h6>
-                    <p>{{ recipe.method }}</p>
+            <li>               
+              <h6>{{ recipe.recipe_name }}</h6>
+              <h6>Chef Name</h6>
+              <p>{{ recipe.chef_name }}</p>
+              <h6>Ingredient</h6>
+              <p>{{ recipe.ingredients }}</p>
+              <h6>Method</h6>
+              <p>{{ recipe.method }}</p>
             </li>
             {% endfor %}
         </ul>
