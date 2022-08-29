@@ -62,6 +62,8 @@ footer{
     color: #BB49DD;
     border-radius: 10px;
     padding: 15px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 #products{
@@ -83,6 +85,8 @@ footer{
     color: #BB49DD;
     border-radius: 10px;
     padding: 15px;
+    margin-left: 10%;
+    width: 80%;
 }
 
 #displayAdded, #displayEdit{

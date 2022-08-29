@@ -39,7 +39,12 @@
           </ul>
         </div>
       </nav>
-
+     
+      {% if session['logged_in'] %}
+      <div>
+          <h4 style="text-align:center">Welcome {{ name }}, see your <a href="{{ url_for('myRecipes') }}"">recipes</a></h4>
+      </div>
+      {% endif %}
       <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -100,21 +105,10 @@
         <div class="col-md-12" id="search" name = "search">
           <h1 style="text-align: center;">Search</h1>
           <div>
-          <div class="col-md-4" style="float: left;">
+          <div>
             <h4>Search Recipe name</h4>
             <form method="GET" action="/search">
               <input class="form-control mr-sm-2 recipe-search" name = "recipe-search" id = "recipe-search" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </div>
-          <div class="col-md-4" style="float: right;">
-            <h4>Search by Ingredients</h4>
-            <form>
-              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
-              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
-              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
-              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
-              <input class="form-control mr-sm-2 ingredient-search" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>

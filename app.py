@@ -67,7 +67,7 @@ def insert_recipe():
         'recipe_name': request.form.get('recipeName1').upper(),
         'creator': request.form.get('creator1').upper(),
         'ingredients': request.form.get('ingredients1').upper(),
-        'method': request.form.get('method1').upper()
+        'method': request.form.get('method1').upper() 
     })
     return redirect(url_for("index"))
 
@@ -103,7 +103,9 @@ def search():
 def login():
     message = 'Please login to your account'
     if "email" in session:
-        return render_template('useraccount.html')
+        name =  session.get("name")
+        print(name)
+        return render_template('index.html', name=name)
 
     if request.method == "POST":
         email = request.form.get("email")
@@ -151,3 +153,7 @@ def logout():
         return render_template("login.html")
     else:
         return render_template('index.html')
+    
+@app.route("/myRecipes")
+def myRecipes():
+    return render_template("myrecipes.html")
