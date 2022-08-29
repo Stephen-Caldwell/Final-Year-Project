@@ -1,3 +1,5 @@
+from email.mime import image
+from importlib.metadata import files
 import os
 import json
 from webbrowser import get
@@ -8,18 +10,25 @@ from unittest import result
 from flask import (Flask, flash, render_template, redirect, request, url_for, jsonify, session)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
     import env
 
+UPLOAD_FOLDER = 'static/assets/img'
 app = Flask(__name__)
 
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key  = os.environ.get("SECRET_KEY")
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 mongo = PyMongo(app)
 recipes = mongo.db.Recipes
 users = mongo.db.Users
+
+def allowed_file(filename):
+ return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route("/", methods=['post', 'get'])
 def index():
@@ -71,12 +80,19 @@ def insert_recipe():
     if "email" in session:
         email = session["email"]
         name = users.find_one({"email": email}).get("name")
+    
+    file = request.files['image']
+    filename = secure_filename(file.filename)
+    if file and allowed_file(file.filename):
+       file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     recipes.insert_one({
         'recipe_name': request.form.get('recipeName1').upper(),
         'creator': name,
         'ingredients': request.form.get('ingredients1').upper(),
-        'method': request.form.get('method1').upper() 
+        'method': request.form.get('method1').upper(),
+        'image': file.filename
     })
+    
     return redirect(url_for("index"))
 
 @app.route('/delete_recipe/<recipe_id>')

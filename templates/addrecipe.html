@@ -99,7 +99,7 @@
       <div class="col-md-12" id="addRecipeForm">
           <h1>Add your favourite recipe</h1>
           <p><em>Whether it be a family recipe or your own creation</em></p>
-          <form method="POST" action="/insert_recipe">
+          <form method="POST" action="/insert_recipe" enctype="multipart/form-data">
             <div class="form-group">
               <label for="recipeName1">Recipe Name</label>
               <input type="text" class="form-control mr-sm-2" id="recipeName1" name="recipeName1" placeholder="Recipe Name">
@@ -116,7 +116,11 @@
               <label for="method1">Method</label>
               <textarea class="form-control mr-sm-2" id="method1" name="method1" rows="10"></textarea>
             </div>
-            
+            <div>
+              <label for="image">Upload Image</label>
+              <input type="file" id="image" 
+                     name="image" value="">
+            </div>
               <button type="submit" class="btn btn-primary" name="action">Submit</button>
           </form>
       </div>
