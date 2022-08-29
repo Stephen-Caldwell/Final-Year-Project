@@ -26,7 +26,9 @@ def index():
     
     message = ''
     if "email" in session:
-        return render_template('index.html')
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
+        return render_template('index.html', name=name)
     if request.method == "POST":
         user = request.form.get("name")
         email = request.form.get("email")
@@ -59,13 +61,19 @@ if __name__ == "__main__":
 
 @app.route("/addrecipe")
 def addrecipe():
-    return render_template("addrecipe.html")
+    if "email" in session:
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
+    return render_template("addrecipe.html", name=name)
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
+    if "email" in session:
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
     recipes.insert_one({
         'recipe_name': request.form.get('recipeName1').upper(),
-        'creator': request.form.get('creator1').upper(),
+        'creator': name,
         'ingredients': request.form.get('ingredients1').upper(),
         'method': request.form.get('method1').upper() 
     })
@@ -103,8 +111,8 @@ def search():
 def login():
     message = 'Please login to your account'
     if "email" in session:
-        name =  session.get("name")
-        print(name)
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
         return render_template('index.html', name=name)
 
     if request.method == "POST":
@@ -156,4 +164,11 @@ def logout():
     
 @app.route("/myRecipes")
 def myRecipes():
-    return render_template("myrecipes.html")
+    if "email" in session:
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
+    
+    myrecipes = mongo.db.Recipes.find({'creator' : name})
+    
+    if myrecipes is not None:
+        return render_template("myrecipes.html", recipes = myrecipes)

@@ -38,5 +38,29 @@
           </ul>
         </div>
       </nav>
+      <div class="row" id="my_recipes">
+        <div class="col-md-10" id="myrecipes" name = "myrecipes">
+          <h1 style="text-align: center;">My Recipes</h1>
+          <ul class="collapsible popout" data-collapsible="expandable">
+            {% for recipe in recipes %}
+            <li>               
+              <h6>{{ recipe.recipe_name }}</h6>
+              <h6>Chef Name</h6>
+              <p>{{ recipe.creator }}</p>
+              <h6>Ingredient</h6>
+              <p>{{ recipe.ingredients }}</p>
+              <h6>Method</h6>
+              <p>{{ recipe.method }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        </div>
+        
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
 </body>
 </html>
