@@ -86,14 +86,14 @@
             <h1>Edit your recipe</h1>
             <p><em>Did you discover something new, share it</em></p>
            
-            <form action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method="POST">
+            <form action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="recipeName1">Recipe Name</label>
                 <input type="text" class="form-control" id="recipeName" name="recipeName" placeholder="Recipe Name" value = "{{ recipes.recipe_name }}">
               </div>
               <div class="form-group">
-                <label for="chefName1">Chef's name</label>
-                <input type="text" class="form-control" id="chefName" name="chefName" placeholder="Chef's Name" value = "{{ recipes.chef_name }}">
+                <label for="creator1">Chef's name</label>
+                <p>{{ name }}</p>
               </div>
               <div class="form-group">
                 <label for="ingredients1">Ingredients</label>
@@ -103,7 +103,12 @@
                 <label for="method1">Method</label>
                 <textarea class="form-control" id="method" name="method" rows="10"> {{ recipes.method }} </textarea>
               </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <div>
+                <label for="image">Upload Image</label>
+                <input type="file" id="image1" 
+                       name="image1" value="">
+              </div>
+              <button type="submit" class="btn btn-primary" name="action">Submit</button>
             </form>
         </div>
         

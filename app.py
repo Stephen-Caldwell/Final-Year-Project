@@ -98,30 +98,42 @@ def insert_recipe():
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('home'))
+    return redirect(url_for('index'))
 
 @app.route('/editrecipe/<recipe_id>')
 def edit_recipe(recipe_id):
+    if "email" in session:
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
     the_recipe = recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('editrecipe.html',
-                           recipes=the_recipe)
+                           recipes=the_recipe, name=name)
 
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
+    if "email" in session:
+        email = session["email"]
+        name = users.find_one({"email": email}).get("name")
+    
+    file1 = request.files['image1']
+    filename1 = secure_filename(file1.filename)
+    if file1 and allowed_file(file1.filename):
+        file1.save(os.path.join(app.config['UPLOAD_FOLDER'], filename1))
     recipes.update({'_id': ObjectId(recipe_id)},
-                   {
+                   {"$set": {
         'recipe_name': request.form.get('recipeName').upper(),
-        'chef_name': request.form.get('chefName').upper(),
+        'creator': name,
         'ingredients': request.form.get('ingredients').upper(),
-        'method': request.form.get('method').upper()
-    })
-    return redirect(url_for('home'))       
+        'method': request.form.get('method').upper(),
+        'image': file1.filename
+    }})
+    return redirect(url_for('index')) 
 
 @app.route('/search', methods=['GET'])
 def search():
-            results = mongo.db.Recipes.find({'recipe_name' : {'$regex' : request.values.get('recipe-search').upper()}})
-            print(results)
-            return render_template('searchresults.html', recipes = results)
+    results = mongo.db.Recipes.find({'recipe_name' : {'$regex' : request.values.get('recipe-search').upper()}})
+    print(results)
+    return render_template('searchresults.html', recipes = results)
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
