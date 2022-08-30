@@ -7,10 +7,11 @@ import bcrypt
 from re import template
 from typing import Collection
 from unittest import result
-from flask import (Flask, flash, render_template, redirect, request, url_for, jsonify, session)
+from flask import (Flask, render_template, redirect, request, url_for, session)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.utils import secure_filename
+from fpdf import FPDF
 if os.path.exists("env.py"):
     import env
 
@@ -26,6 +27,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 mongo = PyMongo(app)
 recipes = mongo.db.Recipes
 users = mongo.db.Users
+pdf = FPDF()
 
 def allowed_file(filename):
  return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -200,3 +202,4 @@ def myRecipes():
     
     if myrecipes is not None:
         return render_template("myrecipes.html", recipes = myrecipes)
+

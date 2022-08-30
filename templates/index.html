@@ -42,7 +42,7 @@
      
       {% if session['logged_in'] %}
       <div>
-          <h4 style="text-align:center">Welcome {{ name }}, see your <a href="{{ url_for('myRecipes') }}"">recipes</a></h4>
+          <h4 style="text-align:center">Welcome {{ name }}, see your own <a href="{{ url_for('myRecipes') }}">recipes</h4>
       </div>
       {% endif %}
       <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
