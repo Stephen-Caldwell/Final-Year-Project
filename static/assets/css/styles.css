@@ -155,3 +155,16 @@ footer{
     margin-bottom: 5px;
 }
 
+ul, li{
+    list-style-type: none;
+}
+
+#search_results, #my_recipes {
+    background-color: #95cfa4;
+    color: #f7f7f5;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    width: 80%;
+    margin-left: 10%;
+}

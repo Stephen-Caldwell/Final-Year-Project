@@ -27,6 +27,9 @@
         <li>
           <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
         </li>
+        <li>
+          <a class="nav-link" href="{{ url_for('myRecipes') }}">My Recipes</a>
+        </li>
         {% else %}
           <li class="nav-item active">
             <a class="nav-link" style="visibility:visible" href="{{ url_for('login') }}">Login</a>
@@ -40,12 +43,12 @@
     </div>
   </nav>
     <div class="row" id="search_results">
-        <div class="col-md-10" id="recipes" name = "recipes">
-          <h1 style="text-align: center;">Recipes</h1>
+        <div class="col-md-12" id="recipes" name = "recipes">
+          <h1>Recipes</h1>
           <ul class="collapsible popout" data-collapsible="expandable">
             {% for recipe in recipes %}
             <li>               
-              <h6>{{ recipe.recipe_name }}</h6>
+              <h4>{{ recipe.recipe_name }}</h4>
               <h6>Chef Name</h6>
               <p>{{ recipe.creator }}</p>
               <h6>Ingredient</h6>
@@ -55,10 +58,9 @@
               <h6>Image</h6>
               <img src="/static/assets/img/{{ recipe.image }}">
               <div>
-                <button class="like-counter btn btn-primary"><i class="fa fa-thumbs-up" onclick="like('{{recipe.recipe_name}}')"></i></button><span class="click-text"><p id="{{ recipe.recipe_name }} likes"></span>
-              </div>
-              <div>
-                <button class="dislike-counter btn btn-danger"><i class="fa fa-thumbs-down" onclick="dislike('{{recipe.recipe_name}}')"></i></button><span class="click-text"><p id="{{ recipe.recipe_name }} dislikes"></span>
+                <button class="like-counter btn btn-primary"><i class="fa fa-thumbs-up" onclick="like('{{recipe.recipe_name}}')"></i></button><span class="click-text"><p id="{{ recipe.recipe_name }}likes"></span>
+             
+                <button class="dislike-counter btn btn-danger"><i class="fa fa-thumbs-down" onclick="dislike('{{recipe.recipe_name}}')"></i></button><span class="click-text"><p id="{{ recipe.recipe_name }}dislikes"></span>
               </div>
             {% endfor %}
           </ul>
@@ -73,20 +75,20 @@
         function like(recipe_name){   
           console.log(recipe_name);     
           var likecount = 0;
-          document.getElementById(recipe_name + " likes").innerHTML = likecount;
+          document.getElementById(recipe_name + "likes").innerHTML = likecount;
           $('.like-counter').click(function() {
             likecount += 1;
-            document.getElementById(recipe_name + " likes").innerHTML = likecount;
+            document.getElementById(recipe_name + "likes").innerHTML = likecount;
             $('.like-counter').addClass("liked");
           });
         }
         function dislike(recipe_name){   
           console.log(recipe_name);   
         var dislikecount = 0;
-        document.getElementById(recipe_name + " dislikes").innerHTML = dislikecount;
+        document.getElementById(recipe_name + "dislikes").innerHTML = dislikecount;
         $('.dislike-counter').click(function() {
           dislikecount += 1;
-          document.getElementById(recipe_name + " dislikes").innerHTML = dislikecount;
+          document.getElementById(recipe_name + "dislikes").innerHTML = dislikecount;
           $('.dislike-counter').addClass("disliked");
         });
       }

@@ -27,6 +27,9 @@
             <li>
               <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
             </li>
+            <li>
+              <a class="nav-link" href="{{ url_for('myRecipes') }}">My Recipes</a>
+            </li>
             {% else %}
               <li class="nav-item active">
                 <a class="nav-link" style="visibility:visible" href="{{ url_for('login') }}">Login</a>
@@ -34,6 +37,7 @@
               <li class="nav-item">
                 <a class="nav-link" style="visibility:visible" href="{{ url_for('register') }}">Register</a>
               </li>
+            
             {% endif %}
             
           </ul>
@@ -42,7 +46,7 @@
      
       {% if session['logged_in'] %}
       <div>
-          <h4 style="text-align:center">Welcome {{ name }}, see your own <a href="{{ url_for('myRecipes') }}">recipes</h4>
+          <h4 style="text-align:center">Welcome {{ name }}, see your own <a href="{{ url_for('myRecipes') }}">recipes</a></h4>
       </div>
       {% endif %}
       <div id="myCarousel" class="carousel slide myCarousel" data-ride="carousel">
