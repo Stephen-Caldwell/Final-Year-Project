@@ -95,7 +95,7 @@ def insert_recipe():
         'image': file.filename
     })
     
-    return redirect(url_for("index"))
+    return redirect(url_for("myRecipes"))
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
@@ -129,7 +129,7 @@ def update_recipe(recipe_id):
         'method': request.form.get('method').upper(),
         'image': file1.filename
     }})
-    return redirect(url_for('index')) 
+    return redirect(url_for('myRecipes')) 
 
 @app.route('/search', methods=['GET'])
 def search():

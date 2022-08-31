@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/static/assets/css/styles.css" rel="stylesheet" type="text/css" />
-    <title>Family Favourites</title>
+    <title>Add Recipe</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
 </head>
 <body>
   <nav class="navbar navbar-expand-md mb-4">
-    <a class="navbar-brand" id="title" href="{{ url_for('index') }}">Family Favourites</a>
+    <a class="navbar-brand" id="title" href="{{ url_for('index') }}">Caldwell Culinary</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -99,7 +99,7 @@
     
   </div>
       <div class="row" id="added_recipe">
-      <div class="col-md-12" id="addRecipeForm">
+      <div class="col-md-10" id="addRecipeForm">
           <h1>Add your favourite recipe</h1>
           <p><em>Whether it be a family recipe or your own creation</em></p>
           <form method="POST" action="/insert_recipe" enctype="multipart/form-data">
@@ -109,7 +109,7 @@
             </div>
             <div class="form-group">
               <label for="creator1">Chef's name</label>
-              <p>{{ name }}</p>
+              <p style="font-size:xx-large">{{ name }}</p>
             </div>
             <div class="form-group">
               <label for="ingredients1">Ingredients</label>
